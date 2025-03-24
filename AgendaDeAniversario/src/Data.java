@@ -23,8 +23,7 @@ public class Data {
 		this.mes = mes;
 	}
 	
-	
-	private boolean verificaData() {
+	public boolean verificaData() {
 		int[] diasDosMeses = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 		if (mes < 1 || mes > 12) {
 			return false;
