@@ -1,12 +1,12 @@
 
 public class Pessoa {
-	String nome, telefone, email;
-	Data dataDeAniversario;
+	private String nome, telefone, email;
+	private Data dataDeAniversario;
 	
-	public Pessoa(String nome, String telefone, String email, Data dataDeAniversario) {
-		this.nome = nome;
-		this.telefone = telefone;
-		this.email = email;
+	public Pessoa(String nome, String telefone, String email) {
+		this.nome = "";
+		this.telefone = "";
+		this.email = "";
 		this.dataDeAniversario = dataDeAniversario;
 	}
 

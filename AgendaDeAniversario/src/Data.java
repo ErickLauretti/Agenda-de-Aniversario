@@ -1,6 +1,6 @@
 
 public class Data {
-	int dia, mes;
+	private int dia, mes;
 
 	public Data(int dia, int mes) {
 		this.dia = dia;
@@ -22,11 +22,23 @@ public class Data {
 	public void setMes(int mes) {
 		this.mes = mes;
 	}
+	
+	
+	private boolean verificaData() {
+		int[] diasDosMeses = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		if (mes < 1 || mes > 12) {
+			return false;
+		}
+		
+		return dia > 0 && dia <= diasDosMeses[mes];
+	}
+	
+	public String dataVerificada() {
+		return verificaData() ? "Data válida!" : "Data inválida!";
+	}
 
 	@Override
 	public String toString() {
-		return "Data [dia=" + dia + ", mes=" + mes + "]";
+		return "Data de aniversário: "+ dia +"/"+ mes;
 	}
-	
-	
 }
