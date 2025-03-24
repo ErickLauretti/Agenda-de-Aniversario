@@ -1,2 +1,2 @@
-# Agenda-de-Anivers-rio
+# Agenda-de-Aniversario
 Sistema de agenda de aniversário para a disciplina de Linguagem de Programação Orientada a Objetos, do curso superior de tecnologia em Análise e Desenvolvimento de Sistemas
