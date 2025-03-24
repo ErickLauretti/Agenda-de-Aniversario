@@ -3,11 +3,11 @@ public class Pessoa {
 	private String nome, telefone, email;
 	private Data dataDeAniversario;
 	
-	public Pessoa(String nome, String telefone, String email) {
-		this.nome = "";
-		this.telefone = "";
-		this.email = "";
-		this.dataDeAniversario = dataDeAniversario;
+	public Pessoa(String nome, String telefone, String email, int dia, int mes) {
+		this.nome = nome;
+		this.telefone = telefone;
+		this.email = email;
+		this.dataDeAniversario = new Data(dia, mes);
 	}
 
 	public String getNome() {
