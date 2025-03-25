@@ -112,7 +112,21 @@ public class ProgramaPrincipal {
     }
 
     private static void pesquisarPorNome() {
-        System.out.println("implementar a lógica");
+    	System.out.println("\n=== Pesquisa: Por Nome ===");
+    	System.out.print("Insira o nome que deseja pesquisar: ");
+    	String nome = sc.nextLine();
+    	
+    	 boolean existe = false;
+         for (int i = 0; i < pessoas.size(); i++) {
+             if (nome.equalsIgnoreCase(pessoas.get(i).getNome())) {
+                 System.out.println(pessoas.get(i).toString());
+                 existe = true;
+             }
+         }
+         if(!existe) {
+        	 System.err.println("NOME INEXISTENTE");
+         }
+    	
     }
 
     private static void pesquisarDiaMes() {

@@ -31,13 +31,18 @@ public class Data {
 		
 		return dia > 0 && dia <= diasDosMeses[mes];
 	}
-	
-	public String dataVerificada() {
-		return verificaData() ? "Data válida!" : "Data inválida!";
-	}
 
 	@Override
 	public String toString() {
-		return "Data de aniversário: "+ dia +"/"+ mes;
+		if (this.dia >= 10 && this.mes >= 10) {
+			return this.dia + "/" + this.mes;
+		} else if (this.dia >= 10) {
+			return this.dia + "/0" + this.mes;	
+		} else if (this.mes >= 10){
+			return "0" + this.dia + "/" + this.mes;
+		} else {
+			return "0" + this.dia + "/0" + this.mes;
+		}
+		
 	}
 }
