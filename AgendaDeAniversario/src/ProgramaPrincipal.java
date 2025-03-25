@@ -34,6 +34,9 @@ public class ProgramaPrincipal {
 				case 5:
 					pesquisarMes();
 					break;
+				case 0:
+					System.out.println("Saindo...");
+					break;
 				default:
 					System.err.println("Número inválido");
 			}
@@ -43,15 +46,32 @@ public class ProgramaPrincipal {
 	
 	private static void inserir() {
 		System.out.println("Digite o nome: ");
-		String nome = sc.next();
+		sc.next();
+		String nome = sc.nextLine();
 		System.out.println("Digite o telefone: ");
-		String telefone = sc.next();
+		String telefone = sc.nextLine();
 		System.out.println("Digite o email: ");
 		String email = sc.next();
-		System.out.println("Digite a data de nascimento: ");
-		String data = sc.next();
+		System.out.println("Digite o dia que nasceu ");
+		int dia = sc.nextInt();
+		System.out.println("Digite o mes que nasceu ");
+		int mes = sc.nextInt();
+		
+		Data data = new Data(dia, mes);
+		
+		if(!data.verificaData()) {
+			System.err.println("Data inválida! Pessoa não cadastrada.");
+			return;
+		}
+		
 		try {
-			Pessoa pessoa = new Pessoa(nome, telefone, email);
+			Pessoa pessoa = new Pessoa(nome, telefone, email, dia, mes);
+			for (Pessoa p : pessoas) {
+				if(pessoa.getNome() == p.getNome()) {
+					System.err.println("Pessoa já cadastrada");
+					return;
+				}
+			}
 			pessoas.add(pessoa);
 			System.out.println("Pessoa inserida com sucesso!");
 		} catch(Exception e) {
