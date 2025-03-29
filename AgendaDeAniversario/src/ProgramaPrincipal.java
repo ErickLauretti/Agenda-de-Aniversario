@@ -130,10 +130,43 @@ public class ProgramaPrincipal {
     }
 
     private static void pesquisarDiaMes() {
-        System.out.println("implementar a lógica");
+        System.out.println("\n=== Pesquisa: Por Dia e Mês ===");
+        System.out.println("Digite o dia do aniversário: ");
+        int dia = sc.nextInt();
+        System.out.println("Digite o mês do aniversário: ");
+        int mes = sc.nextInt();
+        sc.nextLine(); //limpar o buffer do scanner
+        Data data = new Data(dia, mes);
+        
+        boolean existe = false;
+        for (int i = 0; i < pessoas.size(); i++) {
+        	if (data.getDia() == pessoas.get(i).getDataDeAniversario().getDia() &&
+                    data.getMes() == pessoas.get(i).getDataDeAniversario().getMes()) {
+                    System.out.println(pessoas.get(i).getNome());
+        		existe = true;
+        	}
+        }
+        if (!existe) {
+        	System.err.println("NENHUM ANIVERSARIANTE");
+        }
     }
 
     private static void pesquisarMes() {
-        System.out.println("implementar a lógica");
+        System.out.println("\n=== Pesquisa: Por Mês ===");
+        System.out.println("Digite o mês do aniversário: ");
+        int mes = sc.nextInt();
+        sc.nextLine(); //limpar o buffer do scanner
+        
+        boolean existe = false;
+        for (int i = 0; i < pessoas.size(); i++) {
+        	if (mes == pessoas.get(i).getDataDeAniversario().getMes()) {
+        		System.out.println(pessoas.get(i).getNome());
+        		System.out.println(pessoas.get(i).getDataDeAniversario());
+        		existe = true;
+        	}
+        }
+        if (!existe) {
+        	System.out.println("NENHUM ANIVERSARIANTE");
+        }
     }
 }
